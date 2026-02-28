@@ -2,6 +2,7 @@ from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
 from .models import User, Profile, Notification
 
+# Register serializer
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(
         write_only = True,
@@ -35,12 +36,14 @@ class RegisterSerializer(serializers.ModelSerializer):
         )
 
         return user
-    
+
+# Profile serializer
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = ['id', 'user', 'bio', 'gender', 'address', 'phone_number', 'avatar']
 
+# Notification serializer
 class NotificationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Notification

@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from .manager import UserManager
 
+# User model
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=100, blank=True)
@@ -15,6 +16,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
+# Profile model
 class Profile(models.Model):
     GENDER_CHOICE = [
         ('male', 'Male'),
@@ -35,6 +37,7 @@ class Profile(models.Model):
     def __str__(self):
         return f"{self.user.username}'s Profile"
     
+# Verification (OTP) model
 class Verification(models.Model):
     PURPOSE_CHOICE = (
         ('account_verification', 'Account verification'),
@@ -52,6 +55,7 @@ class Verification(models.Model):
             models.Index(fields=['user', 'purpose']),
         ]
 
+# Notification model
 class Notification(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
