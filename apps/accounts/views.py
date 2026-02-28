@@ -203,6 +203,12 @@ class SetNewPasswordView(APIView):
         user.set_password(new_password)
         user.save()
 
+        Notification.objects.create(
+            user=user,
+            title = "Password reset",
+            message = "Your password is successfully reset."
+        )
+
         return Response(
             {"success": "Password updated successfully."},
             status=200
@@ -244,6 +250,12 @@ class ChangePasswordView(APIView):
 
         user.set_password(new_password)
         user.save()
+
+        Notification.objects.create(
+            user=user,
+            title = "Password change",
+            message = "Your password is successfully changed."
+        )
 
         return Response(
             {"success": "Password updated successfully."},

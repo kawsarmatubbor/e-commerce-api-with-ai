@@ -32,7 +32,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         Notification.objects.create(
             user=user,
             title = "Welcome",
-            message = "Your are successfully registered:)"
+            message = "You are successfully registered:)"
         )
 
         return user
