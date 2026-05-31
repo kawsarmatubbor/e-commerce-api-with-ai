@@ -1,5 +1,0 @@
-# ignore .env file
-.env
-
-# ignore database
-db.sqlite3
