@@ -246,6 +246,11 @@ UNFOLD = {
                         "icon": "shopping_cart",
                         "link": reverse_lazy("admin:cart_cart_changelist"),
                     },
+                    {
+                        "title": "Orders",
+                        "icon": "receipt_long",
+                        "link": reverse_lazy("admin:order_order_changelist"),
+                    },
                 ],
             },
             {

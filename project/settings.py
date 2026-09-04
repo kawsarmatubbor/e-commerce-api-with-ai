@@ -80,6 +80,7 @@ INSTALLED_APPS = [
     'apps.page',
     'apps.product',
     'apps.cart',
+    'apps.order',
     'apps.system_setting',
 ]
 
