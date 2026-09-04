@@ -5,7 +5,7 @@ from ckeditor.fields import RichTextField
 # Hero section model
 class HeroSection(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField(blank=True)
+    description = RichTextField(blank=True)
     image = models.ImageField(upload_to='hero_images/', blank=True, null=True)
 
     is_active = models.BooleanField(default=True)
@@ -19,7 +19,7 @@ class HeroSection(models.Model):
 # Contact section model
 class ContactSection(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField(blank=True)
+    description = RichTextField(blank=True)
     image = models.ImageField(upload_to='contact_images/', blank=True, null=True)
     email = models.EmailField()
     phone_number = models.CharField(max_length=20)
@@ -49,7 +49,7 @@ class ContactMessage(models.Model):
 # Fnq section model
 class FAQSection(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField(blank=True)
+    description = RichTextField(blank=True)
     image = models.ImageField(upload_to='faq_images/', blank=True, null=True)
 
     is_active = models.BooleanField(default=True)

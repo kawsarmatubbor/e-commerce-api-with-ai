@@ -223,6 +223,27 @@ UNFOLD = {
                 ],
             },
             {
+                "title": "Catalog",
+                "collapsible": True,
+                "items": [
+                    {
+                        "title": "Products",
+                        "icon": "inventory_2",
+                        "link": reverse_lazy("admin:product_product_changelist"),
+                    },
+                    {
+                        "title": "Categories",
+                        "icon": "category",
+                        "link": reverse_lazy("admin:product_category_changelist"),
+                    },
+                    {
+                        "title": "Brands",
+                        "icon": "branding_watermark",
+                        "link": reverse_lazy("admin:product_brand_changelist"),
+                    },
+                ],
+            },
+            {
                 "title": "Landing page",
                 "collapsible": True,
                 "items": [

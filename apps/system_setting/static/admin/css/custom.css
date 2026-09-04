@@ -15,7 +15,7 @@
     width: 100% !important;
 }
 
-.change-form .field-line > .grow > .max-w-2xl {
+.change-form .field-line > .grow .max-w-2xl {
     max-width: none !important;
     min-width: 0 !important;
     width: 100% !important;

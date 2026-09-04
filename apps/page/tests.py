@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.test import TestCase
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 
 from apps.user.models import User
 
@@ -20,6 +21,10 @@ class FAQSectionAdminTests(TestCase):
             with self.subTest(model=model.__name__):
                 self.assertTrue(model._meta.get_field('description').blank)
                 self.assertTrue(model._meta.get_field('image').blank)
+                self.assertIsInstance(
+                    model._meta.get_field('description'),
+                    RichTextField,
+                )
 
     def test_questions_do_not_have_a_standalone_admin(self):
         self.assertNotIn(FAQQuestion, admin.site._registry)
