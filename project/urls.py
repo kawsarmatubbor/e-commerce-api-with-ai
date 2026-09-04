@@ -23,6 +23,7 @@ urlpatterns = [
     path('api/', include('apps.user.urls')),
     path('api/', include('apps.page.urls')),
     path('api/', include('apps.product.urls')),
+    path('api/', include('apps.cart.urls')),
     path('api/', include('apps.system_setting.urls')),
 ]
 

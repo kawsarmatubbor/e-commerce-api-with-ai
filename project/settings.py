@@ -79,6 +79,7 @@ INSTALLED_APPS = [
     'apps.user',
     'apps.page',
     'apps.product',
+    'apps.cart',
     'apps.system_setting',
 ]
 

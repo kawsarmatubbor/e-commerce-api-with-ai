@@ -241,6 +241,11 @@ UNFOLD = {
                         "icon": "branding_watermark",
                         "link": reverse_lazy("admin:product_brand_changelist"),
                     },
+                    {
+                        "title": "Carts",
+                        "icon": "shopping_cart",
+                        "link": reverse_lazy("admin:cart_cart_changelist"),
+                    },
                 ],
             },
             {
